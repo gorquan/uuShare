@@ -1,0 +1,19 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Make sure shell scripts use unix line endings
+*.sh				 eol=lf
+
+# These have to have windowsy line endings
+*.sln				 text eol=crlf
+*.vcxproj			 text eol=crlf
+*.vcxproj.filters	 text eol=crlf
+*.bat				 text eol=crlf
+*.rc				 text eol=crlf
+
+# Custom for Visual Studio
+*.cs				 diff=csharp
+
+# MSVC Resource Compiler files (yes it chokes on utf-8, this is mainly for diffs, see gitconfig.sh)
+StrongDC.rc			 filter=utf16win text eol=crlf
+windows/resource.h	 filter=utf16win text eol=crlf

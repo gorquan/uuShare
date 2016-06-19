@@ -1,0 +1,16 @@
+import configure ;
+import testing ;
+
+compile sixty_four_bit_long.c : : sixty_four_bit_long ;
+compile sixty_four_bit.c : : sixty_four_bit ;
+compile thirty_two_bit.c : : thirty_two_bit ;
+
+alias config :
+				 :
+				 :
+				 : <define>OPENSSL_ON_THE_FLY_CONFIG
+				   <toolset>gcc:<define>RC4_CHUNK="\"unsigned long\""
+					[ check-target-builds sixty_four_bit_long : <define>SIXTY_FOUR_BIT_LONG ]
+					[ check-target-builds sixty_four_bit : <define>SIXTY_FOUR_BIT ]
+					[ check-target-builds thirty_two_bit : <define>THIRTY_TWO_BIT ]
+;

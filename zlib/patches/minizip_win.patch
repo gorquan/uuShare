@@ -1,0 +1,51 @@
+> I have noticed 2 issues when trying to use iowin32 functions for a 
+> desktop (not Win RT) program.
+> 
+> 1) IOWIN32_USING_WINRT_API is always defined.
+> 
+> The WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) test always evaluates 
+> to true so WINRT APIs (CreateFile2, SetFilePointerEx) always get used.
+> There are 2 solutions:
+> - Use WINAPI_FAMILY_ONE_PARTITION(WINAPI_FAMILY, WINAPI_PARTITION_APP). 
+> The comments in the Include/shared/winapifamily.h file in the Windows 
+> Kit show that this is the test to include RT apps but exclude desktop.
+> - Add a test to ensure that _WIN32_WINNT >= 0x0602.
+> I have opted for the first solution in my attached patch.
+> 
+> 2) dwMoveMethod is not propagated to SetFilePointer.
+> 
+> The dwMoveMethod flag is correctly passed to SetFilePointerEx but not to 
+> MySetFilePointerEx & SetFilePointer. It is always FILE_CURRENT.
+> As a result, it is impossible to unzip a file when not using Win RT APIs.
+
+--- zlib/iowin32.c	2013-04-29 00:57:12.000000000 +0200
++++ zlib/iowin32.c	2013-05-16 21:17:24.475806700 +0200
+@@ -26,8 +26,9 @@
+ #endif
+ 
+ 
++// see Include/shared/winapifamily.h in the Windows Kit
+ #if defined(WINAPI_FAMILY_PARTITION) && (!(defined(IOWIN32_USING_WINRT_API)))
+-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
++#if WINAPI_FAMILY_ONE_PARTITION(WINAPI_FAMILY, WINAPI_PARTITION_APP)
+ #define IOWIN32_USING_WINRT_API 1
+ #endif
+ #endif
+@@ -243,7 +244,7 @@
+     return SetFilePointerEx(hFile, pos, newPos, dwMoveMethod);
+ #else
+     LONG lHigh = pos.HighPart;
+-    DWORD dwNewPos = SetFilePointer(hFile, pos.LowPart, &lHigh, FILE_CURRENT);
++    DWORD dwNewPos = SetFilePointer(hFile, pos.LowPart, &lHigh, dwMoveMethod);
+     BOOL fOk = TRUE;
+     if (dwNewPos == 0xFFFFFFFF)
+         if (GetLastError() != NO_ERROR)
+@@ -370,7 +371,7 @@
+     {
+         LARGE_INTEGER pos;
+         pos.QuadPart = offset;
+-        if (!MySetFilePointerEx(hFile, pos, NULL, FILE_CURRENT))
++        if (!MySetFilePointerEx(hFile, pos, NULL, dwMoveMethod))
+         {
+             DWORD dwErr = GetLastError();
+             ((WIN32FILE_IOWIN*)stream) -> error=(int)dwErr;
