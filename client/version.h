@@ -51,7 +51,7 @@
 // - Added these here so Lee can update them without me, Crise
 #define HOMEPAGE "http://share.xuulm.com/"
 #define DISCUSS "http://kb.xuulm.com/category-41"
-#define DONATE "http://wwww.xuulm.com/"
+#define DONATE "http://www.xuulm.com/"
 #define GUIDES "http://kb.xuulm.com/article/152"
 
 #define GEOIPFILE "https://www.maxmind.com/download/geoip/database/GeoIPCountryCSV.zip"
