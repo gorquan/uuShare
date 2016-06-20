@@ -7,13 +7,6 @@ namespace Launcher
 {
     class Program
     {
-        static string ProcessInput(string s)
-        {
-            // TODO Verify and validate the input 
-            // string as appropriate for your application.
-            return s;
-        }
-
         static void Main(string[] args)
         {
             if (args.Length > 0) {
@@ -27,13 +20,13 @@ namespace Launcher
                 {
                     Console.WriteLine("Nick:\t" + arg[0]);
                     Console.WriteLine("E-mail:\t" + arg[1]);
-                    
+
                     XmlDocument xmlDoc = new XmlDocument();
-                    
+
                     // Global Config
 
                     xmlDoc.Load(AppDomain.CurrentDomain.BaseDirectory + "Settings\\DCPlusPlus.xml");
-                    
+
                     XmlNode nodeNick = xmlDoc.SelectSingleNode("DCPlusPlus/Settings/Nick");
                     nodeNick.InnerText = arg[0];
 
