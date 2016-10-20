@@ -1,4 +1,4 @@
-ï»¿/* 
+/* 
  * Copyright (C) 2001-2006 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
@@ -1742,7 +1742,7 @@ uint8_t WinUtil::getFlagIndexByName(const char* countryName) {
 	return 0;
 }
 
-wchar_t arrayutf[42] = { L'Ã', L'Ãˆ', L'Ã', L'Ã‰', L'ÃŒ', L'Ã', L'Â¼', L'Ã’', L'Ã“', L'Ã˜', L'Å ', L'Â', L'Ãš', L'Ã™', L'Ã', L'Å½', L'Ã¡', L'Ã¨', L'Ã¯', L'Ã©', L'Ã¬', L'Ã­', L'Â¾', L'Ã²', L'Ã³', L'Ã¸', L'Å¡', L'Â', L'Ãº', L'Ã¹', L'Ã½', L'Å¾', L'Ã„', L'Ã‹', L'Ã–', L'Ãœ', L'Ã¤', L'Ã«', L'Ã¶', L'Ã¼', L'Â£', L'Â³' };
+wchar_t arrayutf[42] = { L'Á', L'È', L'Ï', L'É', L'Ì', L'Í', L'¼', L'Ò', L'Ó', L'Ø', L'Š', L'', L'Ú', L'Ù', L'İ', L'', L'á', L'è', L'ï', L'é', L'ì', L'í', L'¾', L'ò', L'ó', L'ø', L'š', L'', L'ú', L'ù', L'ı', L'', L'Ä', L'Ë', L'Ö', L'Ü', L'ä', L'ë', L'ö', L'ü', L'£', L'³' };
 wchar_t arraywin[42] = { L'A', L'C', L'D', L'E', L'E', L'I', L'L', L'N', L'O', L'R', L'S', L'T', L'U', L'U', L'Y', L'Z', L'a', L'c', L'd', L'e', L'e', L'i', L'l', L'n', L'o', L'r', L's', L't', L'u', L'u', L'y', L'z', L'A', L'E', L'O', L'U', L'a', L'e', L'o', L'u', L'L', L'l' };
 
 const tstring& WinUtil::disableCzChars(tstring& message) {

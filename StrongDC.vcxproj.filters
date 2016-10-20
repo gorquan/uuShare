@@ -118,7 +118,7 @@
     <None Include="res\stop_ikona.ico">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="res\u-share.ico">
+    <None Include="res\StrongDC.ico">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="res\toolbar.png">
@@ -181,6 +181,11 @@
     <None Include="res\feed.ico">
       <Filter>Resource Files</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="StrongDC.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="windows\ADLSearchFrame.cpp">
@@ -734,18 +739,10 @@
     <ClInclude Include="windows\SplashWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\statusbar.png">
       <Filter>Resource Files</Filter>
     </Image>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="StrongDC.rc">
-      <Filter>Resource Files</Filter>
-    </ResourceCompile>
   </ItemGroup>
 </Project>

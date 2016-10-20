@@ -1,4 +1,4 @@
-/*
+/* 
  * Copyright (C) 2001-2011 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
@@ -98,13 +98,12 @@ void startup() {
 }
 
 void load(function<void (const string&)> stepF, function<void (float)> progressF) {
-	SettingsManager::getInstance()->load();
+	SettingsManager::getInstance()->load();	
 
-    if(!SETTING(LANGUAGE_FILE).empty()) {
+	if(!SETTING(LANGUAGE_FILE).empty()) {
 		string languageFile = SETTING(LANGUAGE_FILE);
-		if(!File::isAbsolute(languageFile)) {
+		if(!File::isAbsolute(languageFile))
 			languageFile = Util::getPath(Util::PATH_LOCALE) + languageFile;
-		}
 		ResourceManager::getInstance()->loadLanguage(languageFile);
 	}
 
@@ -151,7 +150,7 @@ void shutdown() {
 	HttpManager::getInstance()->shutdown();
 	MappingManager::getInstance()->close();
 	BufferedSocket::waitShutdown();
-
+	
 	QueueManager::getInstance()->saveQueue(true);
 	SettingsManager::getInstance()->save();
 	FavoriteManager::getInstance()->shutdown();
