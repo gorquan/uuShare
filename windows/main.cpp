@@ -140,14 +140,6 @@ LONG __stdcall DCUnhandledExceptionFilter( LPEXCEPTION_POINTERS e )
 		exit(-1);
 
 #ifndef _DEBUG
-#if _MSC_VER == 1200
-	__pfnDliFailureHook = FailHook;
-#elif _MSC_VER >= 1300
-	__pfnDliFailureHook2 = FailHook;
-#else
-#error "Unknown Compiler version"
-#endif
-
 	// The release version loads the dll and pdb:s here...
 	EXTENDEDTRACEINITIALIZE( Util::getPath(Util::PATH_RESOURCES).c_str() );
 

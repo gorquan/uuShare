@@ -171,7 +171,7 @@
       <OmitFramePointers>false</OmitFramePointers>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <PreprocessorDefinitions>_WIN32_WINNT=0x600;WINVER=0x600;HAVE_NATUPNP_H;HAS_PCH;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalOptions>/Zm120 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/Zm138 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ResourceCompile>
       <Culture>0x0409</Culture>
@@ -341,6 +341,7 @@
       <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>_WIN32_WINNT=0x600;WINVER=0x600;HAVE_NATUPNP_H;HAS_PCH;_UNICODE;UNICODE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalOptions>/Zm128 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ResourceCompile>
       <Culture>0x0409</Culture>
@@ -455,6 +456,7 @@
       <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>_WIN32_WINNT=0x600;WINVER=0x600;HAVE_NATUPNP_H;HAS_PCH;_UNICODE;UNICODE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalOptions>/Zm128 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ResourceCompile>
       <Culture>0x0409</Culture>
