@@ -3,13 +3,8 @@
 
 #include "stdafx.h"
 #include <windows.h>
-#include <tchar.h>
 #include <iostream>
 #include <fstream>
-#include <locale>
-#include <string>
-
-#include <VersionHelpers.h>
 
 #include "base64.h"
 #include "sha256.h"
@@ -24,8 +19,6 @@ using namespace rapidxml;
 int main(int argc, char **argv)
 {
     ios::sync_with_stdio(false);
-    locale loc("chs");
-    wcout.imbue(loc);
 
     if (argc > 1)
     {
@@ -80,7 +73,6 @@ int main(int argc, char **argv)
                 string dcppPath = path + "\\Settings\\DCPlusPlus.xml";
 
                 std::ifstream ifile(dcppPath);
-                ifile.imbue(loc);
                 string str((istreambuf_iterator<char>(ifile)),
                     std::istreambuf_iterator<char>());
                 ifile.close();
@@ -106,7 +98,6 @@ int main(int argc, char **argv)
                 string favPath = path + "\\Settings\\Favorites.xml";
 
                 std::ifstream favfile(favPath);
-                favfile.imbue(loc);
                 string favstr((istreambuf_iterator<char>(favfile)),
                     std::istreambuf_iterator<char>());
                 favfile.close();
@@ -128,17 +119,9 @@ int main(int argc, char **argv)
                 ofavfile << ofavstr;
                 ofavfile.close();
 
-                string appFile;
-                if (IsWindowsVistaOrGreater())
-                {
-                    BOOL f64 = FALSE;
-                    f64 = IsWow64Process(GetCurrentProcess(), &f64) && f64;
-                    appFile = f64 ? "ApexDC-x64.exe" : "ApexDC.exe";
-                }
-                else
-                {
-                    appFile = "ApexDC-XP.exe";
-                }
+                BOOL f64 = FALSE;
+                f64 = IsWow64Process(GetCurrentProcess(), &f64) && f64;
+                string appFile = f64 ? "ApexDC-x64.exe" : "ApexDC.exe";
 
                 string dcPath = "pushd " + path + " && start " + appFile;
                 system(dcPath.c_str());
