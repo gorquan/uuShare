@@ -14,10 +14,11 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// Czech (Czech Republic) resources
+// 捷克语(捷克共和国) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CSY)
 LANGUAGE LANG_CZECH, SUBLANG_DEFAULT
+#pragma code_page(1250)
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -756,15 +757,16 @@ IDB_SHUTDOWN            ICON                    "res\\shutdown.ico"
 
 IDI_MAGNET              ICON                    "res\\magnet.ico"
 
-#endif    // Czech (Czech Republic) resources
+#endif    // 捷克语(捷克共和国) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// Polish (Poland) resources
+// 波兰语(波兰) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_PLK)
 LANGUAGE LANG_POLISH, SUBLANG_DEFAULT
+#pragma code_page(1250)
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -894,15 +896,16 @@ BEGIN
 END
 #endif    // APSTUDIO_INVOKED
 
-#endif    // Polish (Poland) resources
+#endif    // 波兰语(波兰) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// Croatian (Croatia) resources
+// 克罗地亚语(克罗地亚) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_HRV)
 LANGUAGE LANG_CROATIAN, SUBLANG_DEFAULT
+#pragma code_page(1250)
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -911,15 +914,16 @@ LANGUAGE LANG_CROATIAN, SUBLANG_DEFAULT
 
 IDR_STATUSBAR           PNG                     "res\\statusbar.png"
 
-#endif    // Croatian (Croatia) resources
+#endif    // 克罗地亚语(克罗地亚) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// English (United States) resources
+// 英语(美国) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -1591,19 +1595,19 @@ IDR_HUB_OFF             ICON                    "res\\HubOff.ico"
 // TEXTINCLUDE
 //
 
-1 TEXTINCLUDE
+1 TEXTINCLUDE 
 BEGIN
     "windows\\resource.h\0"
 END
 
-2 TEXTINCLUDE
+2 TEXTINCLUDE 
 BEGIN
     "#include <atlres.h>\r\n"
     "#include "".\\client\\version.h""\r\n"
     "\0"
 END
 
-3 TEXTINCLUDE
+3 TEXTINCLUDE 
 BEGIN
     "\r\n"
     "\0"
@@ -1618,8 +1622,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,6,2,0
- PRODUCTVERSION 1,6,2,0
+ FILEVERSION 1,6,4,0
+ PRODUCTVERSION 1,6,4,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -1637,12 +1641,12 @@ BEGIN
             VALUE "Comments", "https://www.apexdc.net/"
             VALUE "CompanyName", "ApexDC++ Development Team"
             VALUE "FileDescription", "ApexDC++"
-            VALUE "FileVersion", "1.6.2"
+            VALUE "FileVersion", "1.6.4"
             VALUE "InternalName", "ApexDC++"
             VALUE "LegalCopyright", "Copyright (c) 2016 ApexDC++ Development Team"
             VALUE "OriginalFilename", "ApexDC.exe"
             VALUE "ProductName", "ApexDC++"
-            VALUE "ProductVersion", "1.6.2"
+            VALUE "ProductVersion", "1.6.4"
         END
     END
     BLOCK "VarFileInfo"
@@ -1718,15 +1722,16 @@ BEGIN
     0
 END
 
-#endif    // English (United States) resources
+#endif    // 英语(美国) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// Finnish (Finland) resources
+// 芬兰语(芬兰) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_FIN)
 LANGUAGE LANG_FINNISH, SUBLANG_DEFAULT
+#pragma code_page(1252)
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -2104,7 +2109,7 @@ IDR_TOOLBAR20_HOT       PNG                     "res\\toolbar20-highlight.png"
 
 IDR_TOOLBAR             PNG                     "res\\toolbar.png"
 
-#endif    // Finnish (Finland) resources
+#endif    // 芬兰语(芬兰) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
