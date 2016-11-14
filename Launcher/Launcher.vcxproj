@@ -47,12 +47,18 @@
     <OutDir>$(SolutionDir)compiled\</OutDir>
     <IntDir>$(SolutionDir)vc_intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
     <TargetName>Launcher</TargetName>
+    <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
+    <PreLinkEventUseInBuild>false</PreLinkEventUseInBuild>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release - XP|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)compiled\XP\</OutDir>
     <IntDir>$(SolutionDir)vc_intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
     <TargetName>Launcher</TargetName>
+    <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
+    <PreLinkEventUseInBuild>false</PreLinkEventUseInBuild>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
